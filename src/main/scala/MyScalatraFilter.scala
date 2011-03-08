@@ -34,7 +34,7 @@ class MyScalatraFilter extends ScalatraFilter with ScalateSupport {
     request
   }
 
-  get("isAjax") {
+  get("/isAjax") {
     request.isAjax
   }
 
