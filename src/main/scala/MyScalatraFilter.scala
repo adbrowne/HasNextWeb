@@ -25,13 +25,17 @@ class MyScalatraFilter extends ScalatraFilter with ScalateSupport {
 
   get("/guess/:who") {
     params("who") match {
-      case "Frank" => "You got me!"
+      case "Andrew" => "You got me!"
       case _ => pass()
     }
   }
 
   get("/echo") {
     request
+  }
+
+  get("isAjax") {
+    request.isAjax
   }
 
   notFound {
