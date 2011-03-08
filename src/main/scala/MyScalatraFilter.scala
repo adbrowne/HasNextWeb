@@ -14,6 +14,25 @@ class MyScalatraFilter extends ScalatraFilter with ScalateSupport {
       </body>
     </html>
   }
+  
+  get("/blah") {
+    halt(401, "Go away!")
+  }
+
+  get("/guess/*"){
+    "You missed!"
+  }
+
+  get("/guess/:who") {
+    params("who") match {
+      case "Frank" => "You got me!"
+      case _ => pass()
+    }
+  }
+
+  get("/echo") {
+    request
+  }
 
   notFound {
     // If no route matches, then try to render a Scaml template
