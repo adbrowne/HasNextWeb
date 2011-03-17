@@ -25,7 +25,7 @@ class MyScalatraFilter extends ScalatraFilter with ScalateSupport {
 
   get("/guess/:who") {
     params("who") match {
-      case "Andrew" => "You got me!"
+      case "adbrowne" => "You got me!"
       case _ => pass()
     }
   }
